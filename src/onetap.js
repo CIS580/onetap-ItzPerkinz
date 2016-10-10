@@ -5,6 +5,8 @@ import {Game} from './game';
 var canvas = document.getElementById('screen');
 var game = new Game(canvas, update, render);
 
+var background = new Iage();
+background.src = '/assets/background.png';
 
 /**
  * @function update
@@ -28,5 +30,6 @@ function update(elapsedTime) {
 function render(elapsedTime, ctx) {
 
   // TODO: Draw the game objects using the supplied context
-
+  if(background) ctx.drawImage(background,0,0);
+  
 }
